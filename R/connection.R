@@ -8,16 +8,19 @@ library(yaml)
 Connection <- R6Class(
   "Connection",
   private = list(
-    protocol = "http",
-    host = "localhost",
-    port = 80,
+    protocol = NULL,
+    host = NULL,
+    port = NULL,
+    user = NULL,
+    password = NULL,
+    access_key = NULL,
     build_uri = function(path) {
       paste0(private$protocol, "://", private$host, ":", private$port, path)
     },
     GET = function(path) {
       tryCatch({
         uri <- private$build_uri(path)
-        res <- GET(uri, authenticate("admin", "admin"))
+        res <- GET(uri, authenticate(private$user, private$password))
         stop_for_status(res)
         fromJSON(content(res, "text"))
       }, error = function(e) {
@@ -39,11 +42,12 @@ Connection <- R6Class(
   ),
   public = list(
     initialize = function(protocol=NULL, host=NULL, port=NULL) {
-      # TODO: 接続情報を外部ファイルから取得する。取得元および初期値は要検討
       connection_info <- yaml.load_file("~/.orochirc")
       private$protocol <- ifelse(is.null(protocol), connection_info$protocol, protocol)
       private$host     <- ifelse(is.null(host), connection_info$host, host)
       private$port     <- ifelse(is.null(port), connection_info$port, port)
+      private$user     <- connection_info$user
+      private$password <- connection_info$password
     },
     get = function(resource, id, params = NULL) {
       query <- private$build_query(params)
