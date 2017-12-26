@@ -7,9 +7,13 @@ Pmlame <- R6Class(
     conn = NA,
     json_list = NA,
     convert = function(dataframe) {
-      title_list <- dataframe[, "element"]
-      rownames(dataframe) <- title_list
-      dataframe <- dataframe[, -5]
+      colnames <- colnames(dataframe)
+      colindex <- grep(x=colnames, pattern = "element")
+      if( length(colindex) > 0 ) {
+        title_list <- dataframe[, "element"]
+        rownames(dataframe) <- title_list
+        dataframe[, "element"] <- NULL
+      }
       dataframe
     },
     set_opts = function(opts = NULL) {
