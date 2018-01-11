@@ -20,6 +20,9 @@ Resource <- R6Class(
     find_by_global_id = function(id, options = NULL) {
       private$conn$get("records", id, options)$datum_attributes
     },
+    find_all = function(options = NULL) {
+      private$conn$gets(private$name, NULL, options)
+    },
     belongs_to = function(resource, id, options = NULL) {
       private$conn$gets_sub(resource, id, private$name, options)
     }

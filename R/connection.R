@@ -58,7 +58,7 @@ Connection <- R6Class(
       private$GET(path)
     },
     gets = function(resource, ids, params = NULL) {
-      ids_param <- paste((function(id) { paste0("q[id_in][]=", id) })(ids), collapse = "&")
+      ids_param <- ifelse(is.null(ids), "", paste((function(id) { paste0("q[id_in][]=", id) })(ids), collapse = "&"))
       query <- private$build_query(params)
       params <- ifelse(is.null(query), "", paste0("&", query))
       path <- paste0(resource, ".json", "?", ids_param, params)
