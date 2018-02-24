@@ -1,12 +1,11 @@
 Package: MedusaRClient
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Interface to Medusa
 Version: 0.1.2
-Author: Who wrote it
-Maintainer: The package maintainer <yourself@somewhere.net>
-Description: More about what it does (maybe more than one line)
-    Use four spaces when indenting paragraphs within the Description.
-License: What license is it under?
+Author: Tak Kunihiro
+Maintainer: Tak Kunihiro <tkk@misasa.okayama-u.ac.jp>
+Description: R package that talks to Medusa
+License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
 Imports: testthat, roxygen2, yaml, plyr, httr, jsonlite, R6, stringr
