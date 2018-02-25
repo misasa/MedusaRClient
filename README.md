@@ -2,6 +2,10 @@
 
 R package that talks to Medusa
 
+# Dependency
+
+## [GNU R](https://www.r-project.org/ "follow instruction")
+
 # User's guide
 
 To install this package issue following command.
