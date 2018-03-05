@@ -18,7 +18,7 @@ library(stringr)
 #' @return A dataframe with unit organized.
 #'   \url{https://github.com/misasa/MedusaRClient}
 #'
-#' @importFrom yaml load_file
+#' @import yaml
 #' @export
 #' @examples
 #' stone   <- "20081202172326.hkitagawa"
