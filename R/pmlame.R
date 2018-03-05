@@ -1,6 +1,17 @@
-library(R6)
-library (plyr)
-
+#' Class providing object with methods for communication with Medusa server
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @importFrom plyr ldply
+#' @export
+#' @return Object of \code{\link{R6Class}} with methods for communication with Medusa server
+#' @format \code{\link{R6Class}} object.
+#' #' @section Methods:
+#' \describe{
+#'   \item{Documentation}{For full documentation of each method go to https://github.com/misasa/MedusaRClient/}
+#'   \item{\code{new()}}{This method is used to create object of the class}
+#'   \item{\code{read(global_id, options = NULL)}{This method get a record with \code{global_id} as global-ID of the record and \code{opts} as Recursivep}}
+#' }
 Pmlame <- R6Class(
   "Pmlame",
   private = list(

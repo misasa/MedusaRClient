@@ -1,8 +1,3 @@
-library(httr)
-library(jsonlite)
-library(R6)
-library(stringr)
-
 #' @title Get pmlame json from medusa and return a dataframe of pmlame
 #'
 #' @description Get pmlame json from medusa and return a dataframe of pmlame.

@@ -1,9 +1,21 @@
-library(httr)
-library(jsonlite)
-library(R6)
-library(stringr)
-library(yaml)
-
+#' Class providing object with methods for communication with RESTful services
+#'
+#' @docType class
+#' @importFrom R6 R6Class
+#' @import httr
+#' @import jsonlite
+#' @import stringr
+#' @import yaml
+#' @export
+#' @return Object of \code{\link{R6Class}} with methods for communication with RESTful service
+#' #' @section Methods:
+#' \describe{
+#'   \item{Documentation}{For full documentation of each method go to https://github.com/misasa/MedusaRClient/}
+#'   \item{\code{new()}}{This method is used to create object of this class}
+#'   \item{\code{get(resource, id, params = NULL)}}{This method is used to get record with \code{resource} as resource name, \code{id} as id, and \code{params} as list of query parameters}
+#'   \item{\code{gets(resource, ids, params = NULL)}}{This method is used to get record with \code{resource} as resource name, \code{ids} as list of ids, and \code{params} as list of query parameters}
+#'   \item{\code{gets_sub(owner, id, resource, params = NULL)}}{This method is used to get record with \code{owner} as parent resource name, \code{id} as id of parent record, \code{resource} as resource name, and \code{params} as list of query parameters}
+#' }
 Connection <- R6Class(
   "Connection",
   private = list(
