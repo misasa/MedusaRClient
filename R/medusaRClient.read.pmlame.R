@@ -3,7 +3,6 @@ library(jsonlite)
 library(R6)
 library(plyr)
 library(stringr)
-library(yaml)
 
 #' @title Get pmlame json from medusa and return a dataframe of pmlame
 #'
@@ -18,6 +17,8 @@ library(yaml)
 #' @param verbose Output debug info (default: TRUE).
 #' @return A dataframe with unit organized.
 #'   \url{https://github.com/misasa/MedusaRClient}
+#'
+#' @importFrom yaml load_file
 #' @export
 #' @examples
 #' stone   <- "20081202172326.hkitagawa"
