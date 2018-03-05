@@ -2,3 +2,4 @@
 
 export(medusaRClient.read.pmlame)
 import(yaml)
+importFrom(plyr,ldply)

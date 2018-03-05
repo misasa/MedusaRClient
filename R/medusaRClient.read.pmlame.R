@@ -1,7 +1,6 @@
 library(httr)
 library(jsonlite)
 library(R6)
-library(plyr)
 library(stringr)
 
 #' @title Get pmlame json from medusa and return a dataframe of pmlame
@@ -19,6 +18,7 @@ library(stringr)
 #'   \url{https://github.com/misasa/MedusaRClient}
 #'
 #' @import yaml
+#' @importFrom plyr ldply
 #' @export
 #' @examples
 #' stone   <- "20081202172326.hkitagawa"
