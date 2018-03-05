@@ -1,12 +1,13 @@
 Package: MedusaRClient
 Type: Package
 Title: Interface to Medusa
-Version: 0.1.3
+Version: 0.1.4
 Author: Tak Kunihiro
 Maintainer: Tak Kunihiro <tkk@misasa.okayama-u.ac.jp>
 Description: R package that talks to Medusa
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
-Imports: testthat, roxygen2, yaml, plyr, httr, jsonlite, R6, stringr
+Suggests: testthat
+Imports: yaml, plyr, httr, jsonlite, R6, stringr
 RoxygenNote: 6.0.1

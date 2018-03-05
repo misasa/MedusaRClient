@@ -26,8 +26,3 @@ Get pmlame json from medusa and return a dataframe of pmlame.
 \details{
 This function converts a json data which is from medusa ([medusa_host]/records/[global_id]/pmlame.json) to a dataframe and read it.
 }
-\examples{
-stone   <- "20081202172326.hkitagawa"
-opts    <- list(Recursivep = TRUE)
-pmlame  <- medusaRClient.read.pmlame(stone,opts=opts)
-}

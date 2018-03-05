@@ -15,10 +15,6 @@
 #' @import yaml
 #' @importFrom plyr ldply
 #' @export
-#' @examples
-#' stone   <- "20081202172326.hkitagawa"
-#' opts    <- list(Recursivep = TRUE)
-#' pmlame  <- medusaRClient.read.pmlame(stone,opts=opts)
 medusaRClient.read.pmlame <- function(pmlame_or_stone, opts=NULL, verbose=TRUE) {
   opts_default <- list(Recursivep=FALSE)
   opts_default[intersect(names(opts_default),names(opts))] <- NULL  ## Reset shared options
