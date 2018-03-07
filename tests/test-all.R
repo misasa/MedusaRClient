@@ -1,2 +1,2 @@
 library(testthat)
-#test_check("MedusaRClient")
+test_check("MedusaRClient")
