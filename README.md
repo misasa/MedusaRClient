@@ -14,10 +14,6 @@ To install this package issue following command.
     R> devtools::install_github('misasa/MedusaRClient')
 
     R> library(MedusaRClient)
-    R> library(yaml)
-    R> library(plyr)
-    R> library(httr)
-    R> library(jsonlite)
     R> system.time(medusaRClient.read.pmlame("20081202172326.hkitagawa"))
     R> objs <- Resource$new("specimens") # specimens, boxes, or places
     R> objs$find_all()
