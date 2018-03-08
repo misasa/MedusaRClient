@@ -20,4 +20,10 @@ Object of \code{\link{R6Class}} with methods for communication with Medusa serve
 \description{
 Class providing object with methods for communication with Medusa server
 }
+\examples{
+global_id <- "20081202172326.hkitagawa"
+con <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
+obj <- Pmlame$new(con)
+pmlame <- obj$read(global_id, list(Recursivep=TRUE))
+}
 \keyword{datasets}

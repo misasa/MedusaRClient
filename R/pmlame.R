@@ -5,6 +5,11 @@
 #' @importFrom plyr ldply
 #' @export
 #' @return Object of \code{\link{R6Class}} with methods for communication with Medusa server
+#' @examples
+#' global_id <- "20081202172326.hkitagawa"
+#' con <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
+#' obj <- Pmlame$new(con)
+#' pmlame <- obj$read(global_id, list(Recursivep=TRUE))
 #' @format \code{\link{R6Class}} object.
 #' #' @section Methods:
 #' \describe{
@@ -41,7 +46,7 @@ Pmlame <- R6Class(
       private$conn <- conn
     },
     read = function(global_id, opts = NULL) {
-      resource = Resource$new("pmlame")
+      resource = Resource$new("pmlame", private$conn)
       opts <- private$set_opts(opts)
       private$json_list = resource$belongs_to("records", global_id, opts)
       df <- ldply(private$json_list, data.frame)

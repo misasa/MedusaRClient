@@ -4,22 +4,26 @@
 \name{Connection}
 \alias{Connection}
 \title{Class providing object with methods for communication with RESTful services}
-\format{An object of class \code{R6ClassGenerator} of length 24.}
+\format{\code{\link{R6Class}} object.}
 \usage{
 Connection
 }
 \value{
 Object of \code{\link{R6Class}} with methods for communication with RESTful service
-#' @section Methods:
-\describe{
-  \item{Documentation}{For full documentation of each method go to https://github.com/misasa/MedusaRClient/}
-  \item{\code{new()}}{This method is used to create object of this class}
-  \item{\code{get(resource, id, params = NULL)}}{This method is used to get record with \code{resource} as resource name, \code{id} as id, and \code{params} as list of query parameters}
-  \item{\code{gets(resource, ids, params = NULL)}}{This method is used to get record with \code{resource} as resource name, \code{ids} as list of ids, and \code{params} as list of query parameters}
-  \item{\code{gets_sub(owner, id, resource, params = NULL)}}{This method is used to get record with \code{owner} as parent resource name, \code{id} as id of parent record, \code{resource} as resource name, and \code{params} as list of query parameters}
-}
 }
 \description{
 Class providing object with methods for communication with RESTful services
+}
+\examples{
+con <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
+record <- con$get("specimens",23952)
+#' @section Methods:
+\\describe{
+  \\item{Documentation}{For full documentation of each method go to https://github.com/misasa/MedusaRClient/}
+  \\item{\\code{new()}}{This method is used to create object of this class}
+  \\item{\\code{get(resource, id, params = NULL)}}{This method is used to get record with \\code{resource} as resource name, \\code{id} as id, and \\code{params} as list of query parameters}
+  \\item{\\code{gets(resource, ids, params = NULL)}}{This method is used to get record with \\code{resource} as resource name, \\code{ids} as list of ids, and \\code{params} as list of query parameters}
+  \\item{\\code{gets_sub(owner, id, resource, params = NULL)}}{This method is used to get record with \\code{owner} as parent resource name, \\code{id} as id of parent record, \\code{resource} as resource name, and \\code{params} as list of query parameters}
+}
 }
 \keyword{datasets}

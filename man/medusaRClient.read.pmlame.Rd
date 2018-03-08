@@ -26,3 +26,7 @@ Get pmlame json from medusa and return a dataframe of pmlame.
 \details{
 This function converts a json data which is from medusa ([medusa_host]/records/[global_id]/pmlame.json) to a dataframe and read it.
 }
+\examples{
+global_id <- "20081202172326.hkitagawa"
+pmlame <- medusaRClient.read.pmlame(global_id)
+}

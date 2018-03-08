@@ -8,6 +8,10 @@
 #' @import yaml
 #' @export
 #' @return Object of \code{\link{R6Class}} with methods for communication with RESTful service
+#' @format \code{\link{R6Class}} object.
+#' @examples
+#' con <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
+#' record <- con$get("specimens",23952)
 #' #' @section Methods:
 #' \describe{
 #'   \item{Documentation}{For full documentation of each method go to https://github.com/misasa/MedusaRClient/}
@@ -28,7 +32,8 @@ Connection <- R6Class(
       uri <- paste0(private$protocol, "://", private$uri)
       path <- ifelse( length(grep(x=uri, pattern="/$")), path, paste0("/", path) )
       uri <- paste0(uri, path)
-      cat(file=stderr(), "URI: ", uri, "\n")
+      #cat(file=stderr(), "URI: ", uri, "\n")
+      message("URI: ", uri)
       return(uri)
     },
     GET = function(path) {
@@ -55,8 +60,8 @@ Connection <- R6Class(
     }
   ),
   public = list(
-    initialize = function() {
-      connection_info <- yaml.load_file("~/.orochirc")
+    initialize = function(connection_info = yaml.load_file("~/.orochirc")) {
+      #connection_info <- yaml.load_file("~/.orochirc")
       private$protocol <- ifelse(is.null(connection_info$protocol), "https", connection_info$protocol)
       private$uri      <- connection_info$uri
       private$user     <- connection_info$user

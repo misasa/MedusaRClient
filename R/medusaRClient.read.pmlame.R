@@ -12,6 +12,9 @@
 #' @return A dataframe with unit organized.
 #'   \url{https://github.com/misasa/MedusaRClient}
 #'
+#' @examples
+#' global_id <- "20081202172326.hkitagawa"
+#' pmlame <- medusaRClient.read.pmlame(global_id)
 #' @import yaml
 #' @importFrom plyr ldply
 #' @export
