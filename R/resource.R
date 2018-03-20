@@ -25,7 +25,7 @@
 #' AttachmentFile <- Resource$new("attachment_files")
 #' @field name Stores resource name of your Medusa server
 #' @field conn Stores connection object
-#' #' @section Methods:
+#' @section Methods:
 #' \describe{
 #'   \item{Documentation}{Return an R object that will return Medusa records or Medusa records.
 #'   Visit \url{https://github.com/misasa/MedusaRClient/} for detail.}
