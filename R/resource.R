@@ -1,9 +1,14 @@
-#' Class providing object with methods for communication with Medusa server
+#' @title Return an R object that will return Medusa records or Medusa records
+#'
+#' @description Return an R object that will return Medusa records or
+#'   Medusa records.  This class provides a coherent wrapper
+#'   object-relational mapping for Medusa's RESTful Web service.
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @export
-#' @return Object of \code{\link{R6Class}} with methods for communication with Medusa server
+#' @return An R object of \code{\link{R6Class}} with methods that
+#'   communicate with Medusa or R objects that corespond to Medusa records.
 #' @format \code{\link{R6Class}} object.
 #' @examples
 #' Specimen <- Resource$new("specimens")
@@ -22,12 +27,15 @@
 #' @field conn Stores connection object
 #' #' @section Methods:
 #' \describe{
-#'   \item{Documentation}{For full documentation of each method go to https://github.com/misasa/MedusaRClient/}
-#'   \item{\code{new(name)}}{This method is used to create object of the class with \code{name} as resource name of the server object}
-#'   \item{\code{find(id, options = NULL)}{This method finds a record}}
-#'   \item{\code{find_by_ids(ids, options = NULL)}{This methods finds records}}
-#'   \item{\code{find_by_global_id(id, options = NULL)}{This method finds a record}}
-#'   \item{\code{find_all(options = NULL)}{This method finds records}}
+#'   \item{Documentation}{Return an R object that will return Medusa records or Medusa records.
+#'   Visit \url{https://github.com/misasa/MedusaRClient/} for detail.}
+#'   \item{\code{new(NAME)}}{Create an R object that corresponds to records having resource
+#'   name \code{NAME} in Medusa.  As of March 2018, "specimens", "boxes", "places", "surfaces",
+#'   "spots", "analyses", "devices", "techniques", "chemistries", "bibs", and "attachment_files" are defined in Medusa.}
+#'   \item{\code{find(id, options = NULL)}{Return a Medusa record with local ID specified.}}
+#'   \item{\code{find_by_ids(ids, options = NULL)}{Return Medusa records with local ID specified.}}
+#'   \item{\code{find_by_global_id(id, options = NULL)}{Return a Medusa record with glocal ID specified.}}
+#'   \item{\code{find_all(options = NULL)}{Return all Medusa records having the resource name.}}
 #' }
 Resource <- R6Class(
   "Resource",
