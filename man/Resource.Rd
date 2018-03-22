@@ -10,7 +10,7 @@ Resource
 }
 \value{
 An R object of \code{\link{R6Class}} with methods that
-  communicate with Medusa or R objects that corespond to Medusa records.
+  communicate with Medusa or R objects that correspond to Medusa records.
 }
 \description{
 Return an R object that will return Medusa records or
@@ -30,13 +30,13 @@ Return an R object that will return Medusa records or
 \describe{
   \item{Documentation}{Return an R object that will return Medusa records or Medusa records.
   Visit \url{https://github.com/misasa/MedusaRClient/} for detail.}
-  \item{\code{new(NAME)}}{Create an R object that corresponds to records having resource
+  \item{\code{new(NAME)}}{Return a new R object that corresponds to records having resource
   name \code{NAME} in Medusa.  As of March 2018, "specimens", "boxes", "places", "surfaces",
   "spots", "analyses", "devices", "techniques", "chemistries", "bibs", and "attachment_files" are defined in Medusa.}
-  \item{\code{find(id, options = NULL)}{Return a Medusa record with local ID specified.}}
-  \item{\code{find_by_ids(ids, options = NULL)}{Return Medusa records with local ID specified.}}
-  \item{\code{find_by_global_id(id, options = NULL)}{Return a Medusa record with glocal ID specified.}}
-  \item{\code{find_all(options = NULL)}{Return all Medusa records having the resource name.}}
+  \item{\code{find(id, options = NULL)}}{Return a Medusa record with local \code{ID} specified.}
+  \item{\code{find_by_ids(ids, options = NULL)}}{Return Medusa records with local \code{ID} specified.}
+  \item{\code{find_by_global_id(id, options = NULL)}}{Return a Medusa record with glocal \code{ID} specified.}
+  \item{\code{find_all(options = NULL)}}{Return all Medusa records having the resource name.}
 }
 }
 

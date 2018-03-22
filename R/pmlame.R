@@ -1,21 +1,29 @@
-#' Class providing object with methods for communication with Medusa server
+#' @title Return an R object that will return dataframe or dataframe
+#'
+#' @description Return an R object that will return dataframe or
+#'   dataframe.  This class provides a coherent wrapper
+#'   object-relational mapping for Medusa's RESTful Web service.
 #'
 #' @docType class
 #' @importFrom R6 R6Class
 #' @importFrom plyr ldply
 #' @export
-#' @return Object of \code{\link{R6Class}} with methods for communication with Medusa server
+#' @return An R object of \code{\link{R6Class}} with methods that
+#'   communicate with Medusa or dataframe.
 #' @examples
 #' global_id <- "20081202172326.hkitagawa"
-#' con <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
-#' obj <- Pmlame$new(con)
+#' conn <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
+#' obj <- Pmlame$new(conn)
 #' pmlame <- obj$read(global_id, list(Recursivep=TRUE))
 #' @format \code{\link{R6Class}} object.
-#' #' @section Methods:
+#' @section Methods:
 #' \describe{
-#'   \item{Documentation}{For full documentation of each method go to https://github.com/misasa/MedusaRClient/}
-#'   \item{\code{new()}}{This method is used to create object of the class}
-#'   \item{\code{read(global_id, options = NULL)}{This method get a record with \code{global_id} as global-ID of the record and \code{opts} as Recursivep}}
+#'   \item{Documentation}{Return an R object that will return dataframe or dataframe.
+#'     Visit \url{https://github.com/misasa/MedusaRClient/} for detail.}
+#'   \item{\code{new()}}{Return a new R object that corresponds to a port (or a connection) for dataframes.}
+#'   \item{\code{read(global_id, options = NULL)}}{Return a dataframe of
+#'     a record with \code{global_id} specified.  Return a recursive dataframe when
+#'     \code{Recursivep} is TRUE.}
 #' }
 Pmlame <- R6Class(
   "Pmlame",

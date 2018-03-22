@@ -1,7 +1,7 @@
 Package: MedusaRClient
 Type: Package
 Title: Interface to Medusa
-Version: 0.1.5
+Version: 0.1.6
 Author: Tak Kunihiro
 Maintainer: Tak Kunihiro <tkk@misasa.okayama-u.ac.jp>
 Description: R package that talks to Medusa
