@@ -54,4 +54,7 @@ Chemistry <- Resource$new("chemistries")
 Bib <- Resource$new("bibs")
 AttachmentFile <- Resource$new("attachment_files")
 }
+\seealso{
+\code{\link{connection}}
+}
 \keyword{datasets}

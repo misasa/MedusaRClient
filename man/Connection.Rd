@@ -3,27 +3,39 @@
 \docType{class}
 \name{Connection}
 \alias{Connection}
-\title{Class providing object with methods for communication with RESTful services}
+\title{Return an R object that will return association lists or association lists}
 \format{\code{\link{R6Class}} object.}
 \usage{
 Connection
 }
 \value{
-Object of \code{\link{R6Class}} with methods for communication with RESTful service
+An R object of \code{\link{R6Class}} with methods that
+  communicate with Medusa or association lists.
 }
 \description{
-Class providing object with methods for communication with RESTful services
+Return an R object that will return association lists
+  or association lists.  This class provides object with methods
+  for communication with RESTful services.  This is low-level
+  function and it is not recommended for an user to call this
+  function.
 }
+\section{Methods}{
+
+\describe{
+  \item{Documentation}{Return an R object that will return association lists
+  or association lists.  Visit \url{https://github.com/misasa/MedusaRClient/} for detail.}
+  \item{\code{new()}}{Return a new R object that corresponds to a port (or a connection) for association lists.}
+  \item{\code{get(resource, id, params = NULL)}}{Get record with \code{resource} as resource name, \code{id} as id, and \code{params} as list of query parameters}
+  \item{\code{gets(resource, ids, params = NULL)}}{Get record with \code{resource} as resource name, \code{ids} as list of ids, and \code{params} as list of query parameters}
+  \item{\code{gets_sub(owner, id, resource, params = NULL)}}{Get record with \code{owner} as parent resource name, \code{id} as id of parent record, \code{resource} as resource name, and \code{params} as list of query parameters}
+}
+}
+
 \examples{
-con <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
-record <- con$get("specimens",23952)
-#' @section Methods:
-\\describe{
-  \\item{Documentation}{For full documentation of each method go to https://github.com/misasa/MedusaRClient/}
-  \\item{\\code{new()}}{This method is used to create object of this class}
-  \\item{\\code{get(resource, id, params = NULL)}}{This method is used to get record with \\code{resource} as resource name, \\code{id} as id, and \\code{params} as list of query parameters}
-  \\item{\\code{gets(resource, ids, params = NULL)}}{This method is used to get record with \\code{resource} as resource name, \\code{ids} as list of ids, and \\code{params} as list of query parameters}
-  \\item{\\code{gets_sub(owner, id, resource, params = NULL)}}{This method is used to get record with \\code{owner} as parent resource name, \\code{id} as id of parent record, \\code{resource} as resource name, and \\code{params} as list of query parameters}
+conn <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
+record <- conn$get("specimens",23952)
 }
+\seealso{
+\code{\link{pmlame}} and \code{\link{resource}}
 }
 \keyword{datasets}

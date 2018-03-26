@@ -10,6 +10,7 @@
 #' @export
 #' @return An R object of \code{\link{R6Class}} with methods that
 #'   communicate with Medusa or dataframe.
+#' @seealso \code{\link{medusaRClient.read.pmlame}} and \code{\link{connection}}
 #' @examples
 #' global_id <- "20081202172326.hkitagawa"
 #' conn <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))

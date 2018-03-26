@@ -35,4 +35,7 @@ conn <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", use
 obj <- Pmlame$new(conn)
 pmlame <- obj$read(global_id, list(Recursivep=TRUE))
 }
+\seealso{
+\code{\link{medusaRClient.read.pmlame}} and \code{\link{connection}}
+}
 \keyword{datasets}

@@ -10,6 +10,7 @@
 #' @return An R object of \code{\link{R6Class}} with methods that
 #'   communicate with Medusa or R objects that correspond to Medusa records.
 #' @format \code{\link{R6Class}} object.
+#' @seealso \code{\link{connection}}
 #' @examples
 #' Specimen <- Resource$new("specimens")
 #' Specimen$find_all()

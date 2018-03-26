@@ -1,5 +1,11 @@
-#' Class providing object with methods for communication with RESTful services
+#' @title Return an R object that will return association lists or association lists
 #'
+#' @description Return an R object that will return association lists
+#'   or association lists.  This class provides object with methods
+#'   for communication with RESTful services.  This is low-level
+#'   function and it is not recommended for an user to call this
+#'   function.
+#' 
 #' @docType class
 #' @importFrom R6 R6Class
 #' @import httr
@@ -7,18 +13,21 @@
 #' @import stringr
 #' @import yaml
 #' @export
-#' @return Object of \code{\link{R6Class}} with methods for communication with RESTful service
+#' @return An R object of \code{\link{R6Class}} with methods that
+#'   communicate with Medusa or association lists.
 #' @format \code{\link{R6Class}} object.
+#' @seealso \code{\link{pmlame}} and \code{\link{resource}}
 #' @examples
-#' con <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
-#' record <- con$get("specimens",23952)
-#' #' @section Methods:
+#' conn <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
+#' record <- conn$get("specimens",23952)
+#' @section Methods:
 #' \describe{
-#'   \item{Documentation}{For full documentation of each method go to https://github.com/misasa/MedusaRClient/}
-#'   \item{\code{new()}}{This method is used to create object of this class}
-#'   \item{\code{get(resource, id, params = NULL)}}{This method is used to get record with \code{resource} as resource name, \code{id} as id, and \code{params} as list of query parameters}
-#'   \item{\code{gets(resource, ids, params = NULL)}}{This method is used to get record with \code{resource} as resource name, \code{ids} as list of ids, and \code{params} as list of query parameters}
-#'   \item{\code{gets_sub(owner, id, resource, params = NULL)}}{This method is used to get record with \code{owner} as parent resource name, \code{id} as id of parent record, \code{resource} as resource name, and \code{params} as list of query parameters}
+#'   \item{Documentation}{Return an R object that will return association lists
+#'   or association lists.  Visit \url{https://github.com/misasa/MedusaRClient/} for detail.}
+#'   \item{\code{new()}}{Return a new R object that corresponds to a port (or a connection) for association lists.}
+#'   \item{\code{get(resource, id, params = NULL)}}{Get record with \code{resource} as resource name, \code{id} as id, and \code{params} as list of query parameters}
+#'   \item{\code{gets(resource, ids, params = NULL)}}{Get record with \code{resource} as resource name, \code{ids} as list of ids, and \code{params} as list of query parameters}
+#'   \item{\code{gets_sub(owner, id, resource, params = NULL)}}{Get record with \code{owner} as parent resource name, \code{id} as id of parent record, \code{resource} as resource name, and \code{params} as list of query parameters}
 #' }
 Connection <- R6Class(
   "Connection",
@@ -61,7 +70,7 @@ Connection <- R6Class(
   ),
   public = list(
     initialize = function(connection_info = yaml.load_file("~/.orochirc")) {
-      #connection_info <- yaml.load_file("~/.orochirc")
+      # connection_info <- yaml.load_file("~/.orochirc")
       private$protocol <- ifelse(is.null(connection_info$protocol), "https", connection_info$protocol)
       private$uri      <- connection_info$uri
       private$user     <- connection_info$user
