@@ -2,7 +2,7 @@
 #'
 #' @description Return an R object that will return dataframe or
 #'   dataframe.  This class provides a coherent wrapper
-#'   object-relational mapping for Medusa's RESTful Web service.
+#'   object-relational mapping for Medusa's RESTful web service.
 #'
 #' @docType class
 #' @importFrom R6 R6Class
