@@ -2,6 +2,10 @@
 
 R package that talks to Medusa
 
+# Description
+
+R package that talks to Medusa. It provides a interface to acquire date from Medusa in the usable form for R.  
+
 # Dependency
 
 ## [GNU R](https://www.r-project.org/ "follow instruction")
