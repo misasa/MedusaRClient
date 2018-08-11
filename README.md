@@ -1,10 +1,11 @@
 # MedusaRClient
 
-R package that talks to Medusa
+A series of R interfaces to Medusa
 
 # Description
 
-R package that talks to Medusa. It provides a interface to acquire date from Medusa in the usable form for R.  
+A series of R interfaces to Medusa.  It provides a interface to acquire
+date from Medusa in the usable form for R.
 
 # Dependency
 
