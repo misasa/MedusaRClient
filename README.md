@@ -1,4 +1,4 @@
-# MedusaRClient
+# r package -- MedusaRClient
 
 A series of R interfaces to Medusa
 
