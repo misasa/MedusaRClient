@@ -7,6 +7,9 @@ A series of R interfaces to Medusa
 A series of R interfaces to Medusa.  It provides a interface to acquire
 date from Medusa in the usable form for R.
 
+See [r package -- chelyabinsk](https://github.com/misasa/chelyabinsk) that refers to this package.
+See [shiny project -- VisualAnalysis](https://github.com/misasa/VisualAnalysis) that refers to this package.
+
 # Dependency
 
 ## [GNU R](https://www.r-project.org/ "follow instruction")
