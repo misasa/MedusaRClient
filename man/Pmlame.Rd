@@ -34,6 +34,11 @@ global_id <- "20081202172326.hkitagawa"
 conn <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
 obj <- Pmlame$new(conn)
 pmlame <- obj$read(global_id, list(Recursivep=TRUE))
+
+file_path <- "pmlame.json"
+obj <- Pmlame$new()
+pmlame <- obj$read_local(file_path)
+
 }
 \seealso{
 \code{\link{medusaRClient.read.pmlame}} and \code{\link{connection}}

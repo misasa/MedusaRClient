@@ -61,6 +61,13 @@ Pmlame <- R6Class(
       df <- ldply(private$json_list, data.frame)
       df <- private$convert(df)
       df
+    },
+    read_local = function(json_path, opts = NULL) {
+      private$json_list = fromJSON(json_path)
+      df <- ldply(private$json_list, data.frame)
+      df <- private$convert(df)
+      df
     }
+
   )
 )
