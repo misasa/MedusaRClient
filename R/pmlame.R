@@ -13,7 +13,7 @@
 #' @seealso \code{\link{medusaRClient.read.pmlame}} and \code{\link{connection}}
 #' @examples
 #' global_id <- "20081202172326.hkitagawa"
-#' conn <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
+#' conn <- Connection$new(list(uri="https://dream.misasa.okayama-u.ac.jp/pub/"))
 #' obj <- Pmlame$new(conn)
 #' pmlame <- obj$read(global_id, list(Recursivep=TRUE))
 #' @format \code{\link{R6Class}} object.

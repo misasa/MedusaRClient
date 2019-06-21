@@ -15,7 +15,7 @@ An R object of \code{\link{R6Class}} with methods that
 \description{
 Return an R object that will return dataframe or
   dataframe.  This class provides a coherent wrapper
-  object-relational mapping for Medusa's RESTful Web service.
+  object-relational mapping for Medusa's RESTful web service.
 }
 \section{Methods}{
 
@@ -31,14 +31,9 @@ Return an R object that will return dataframe or
 
 \examples{
 global_id <- "20081202172326.hkitagawa"
-conn <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
+conn <- Connection$new(list(uri="https://dream.misasa.okayama-u.ac.jp/pub/"))
 obj <- Pmlame$new(conn)
 pmlame <- obj$read(global_id, list(Recursivep=TRUE))
-
-file_path <- "pmlame.json"
-obj <- Pmlame$new()
-pmlame <- obj$read_local(file_path)
-
 }
 \seealso{
 \code{\link{medusaRClient.read.pmlame}} and \code{\link{connection}}

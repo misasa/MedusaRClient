@@ -5,7 +5,7 @@ test_that("new works without parameters.",{
 })
 
 test_that("new works with connection.",{
-  con <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
+  con <- Connection$new(list(uri="database.misasa.okayama-u.ac.jp/stone/", user="dream.misasa", password="password"))
   pmlame <- Pmlame$new(con)
   expect_that(pmlame,is_a("Pmlame"))
 })
