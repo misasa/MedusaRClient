@@ -15,7 +15,7 @@ An R object of \code{\link{R6Class}} with methods that
 \description{
 Return an R object that will return Medusa records or
   Medusa records.  This class provides a coherent wrapper
-  object-relational mapping for Medusa's RESTful Web service.
+  object-relational mapping for Medusa's RESTful web service.
 }
 \section{Fields}{
 

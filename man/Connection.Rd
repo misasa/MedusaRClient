@@ -32,7 +32,7 @@ Return an R object that will return association lists
 }
 
 \examples{
-conn <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
+conn <- Connection$new(list(uri="https://dream.misasa.okayama-u.ac.jp/pub/"))
 record <- conn$get("specimens",23952)
 }
 \seealso{

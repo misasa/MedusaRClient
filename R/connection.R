@@ -12,13 +12,14 @@
 #' @import jsonlite
 #' @import stringr
 #' @import yaml
+#' @import urltools
 #' @export
 #' @return An R object of \code{\link{R6Class}} with methods that
 #'   communicate with Medusa or association lists.
 #' @format \code{\link{R6Class}} object.
 #' @seealso \code{\link{pmlame}} and \code{\link{resource}}
 #' @examples
-#' conn <- Connection$new(list(uri="devel.misasa.okayama-u.ac.jp/Chelyabinsk/", user="admin", password="admin"))
+#' conn <- Connection$new(list(uri="https://dream.misasa.okayama-u.ac.jp/pub/"))
 #' record <- conn$get("specimens",23952)
 #' @section Methods:
 #' \describe{
@@ -38,9 +39,15 @@ Connection <- R6Class(
     password = NULL,
     access_key = NULL,
     build_uri = function(path) {
-      uri <- paste0(private$protocol, "://", private$uri)
-      path <- ifelse( length(grep(x=uri, pattern="/$")), path, paste0("/", path) )
-      uri <- paste0(uri, path)
+      parsed_url <- url_parse(private$uri)
+      if (is.na(parsed_url$scheme)){
+        parsed_url$scheme <- private$protocol
+      }
+      #uri <- paste0(private$protocol, "://", private$uri)
+      path <- ifelse( length(grep(x=parsed_url$path, pattern="/$")), path, paste0("/", path) )
+      #uri <- paste0(uri, path)
+      parsed_url$path = paste0(parsed_url$path, path)
+      uri <- url_compose(parsed_url)
       #cat(file=stderr(), "URI: ", uri, "\n")
       message("URI: ", uri)
       return(uri)
@@ -48,7 +55,11 @@ Connection <- R6Class(
     GET = function(path) {
       tryCatch({
         uri <- private$build_uri(path)
-        res <- GET(uri, authenticate(private$user, private$password))
+        if (!is.null(private$user) && !is.null(private$password)){
+          res <- GET(uri, authenticate(private$user, private$password))
+        } else {
+          res <- GET(uri)
+        }
         stop_for_status(res)
         fromJSON(content(res, "text"))
       }, error = function(e) {
